@@ -1,12 +1,9 @@
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const PORT = 4000; // must match docker -p port mapping
 
-// Listen on all network interfaces
+app.use(express.static("public")); // serve static files
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running at http://localhost:${PORT}`);
-});
-
-app.get("/", (req, res) => {
-  res.send("🚀 Hello from Node.js running inside Docker!");
 });
