@@ -1,10 +1,13 @@
-const express = require("express");
+const express = require('express');
+const path = require('path');
 const app = express();
-const PORT = 4000; // must match docker -p port mapping
 
-app.use(express.static("public")); // serve static files
+app.use(express.static(__dirname));
 
-app.listen(PORT, "0.0.0.0", () => {
-  //console.log(`Server running at http://localhost:${PORT}`);
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.listen(8080, '0.0.0.0', () => {
+  console.log('Server running on http://0.0.0.0:8080');
 });
