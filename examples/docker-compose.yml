@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  node-app:
+    build: ./node-app
+    container_name: node-docker-app
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    restart: always
+
+  python-app:
+    build: ./python-app
+    container_name: flask-docker-app
+    ports:
+      - "5000:8080"
+    restart: always
