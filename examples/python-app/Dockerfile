@@ -12,7 +12,7 @@ RUN pip install flask
 COPY . .
 
 # 5️⃣ Expose port 8080
-EXPOSE 8080
+EXPOSE 9090
 
 # 6️⃣ Start the app
 CMD ["python", "app.py"]

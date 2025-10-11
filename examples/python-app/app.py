@@ -1,13 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, send_file
 
-# Create a Flask app object
 app = Flask(__name__)
 
-# Define a route (like app.get('/') in Node)
 @app.route('/')
 def home():
-    return render_template('index.html')  # loads index.html from templates/
+    return send_file('index.html')  # since index.html is in the same folder
 
-# Start the server
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=9090)
