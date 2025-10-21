@@ -92,6 +92,3 @@ docker pull myrepo/myapp:latest       # Pull image
 - `examples/node-app/Dockerfile` → Simple Node.js app
 - `examples/docker-compose.yml` → Multi-container setup (Python + Redis)
 
-# Docker Commands Repo
-
-[![CI/CD Pipeline](https://github.com/ritikagarg0326/docker-commands/actions/workflows/main.yml/badge.svg)](https://github.com/ritikagarg0326/docker-commands/actions/workflows/main.yml)
