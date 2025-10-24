@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ritika Garg | Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🌟 Ritika Garg – Portfolio</h1>
+
+    <form action="/add" method="post">
+      <input type="text" name="title" placeholder="Project Title" required>
+      <input type="text" name="description" placeholder="Short Description" required>
+      <input type="url" name="link" placeholder="Project Link">
+      <button type="submit">Add Project</button>
+    </form>
+
+    <h2>My Projects</h2>
+    <ul>
+      {% for p in projects %}
+      <li>
+        <strong>{{ p[1] }}</strong> – {{ p[2] }}
+        {% if p[3] %}
+          <a href="{{ p[3] }}" target="_blank">🔗</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
