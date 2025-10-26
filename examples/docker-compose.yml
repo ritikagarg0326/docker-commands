@@ -1,9 +1,11 @@
+version: "3.9"
+
 services:
   node-app:
     build: ./node-app
     container_name: node-docker-app
     ports:
-      - "3200:8080"   # changed external port from 8080 → 3200
+      - "3200:8080"   # external:internal
     environment:
       - NODE_ENV=production
     restart: always
@@ -20,4 +22,11 @@ services:
     container_name: flask-sqlite-app
     ports:
       - "6000:6060"
+    restart: always
+
+  vero-portfolio:
+    build: ./vero-portfolio-website
+    container_name: vero-portfolio-app
+    ports:
+      - "4040:4040"   # external:internal
     restart: always
